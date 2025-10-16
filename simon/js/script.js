@@ -19,7 +19,28 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 */
 
 // inserire 5 numeri generati casualmente
+let numero1 = Math.ceil(Math.random(1) * 99);
+let numero2 = Math.ceil(Math.random(1) * 99);
+let numero3 = Math.ceil(Math.random(1) * 99);
+let numero4 = Math.ceil(Math.random(1) * 99);
+let numero5 = Math.ceil(Math.random(1) * 99);
+
+console.log(numero1, numero2, numero3, numero4, numero5);
+
+
+// creo una variabile timerEl e un contatore 
+const timerEl = document.getElementById('timer')
+let counter = 30
+
+console.log(timerEl);
+console.log(counter);
+
+
 // imposto un timer di 30 secondi
+const timeout = setInterval(() => {
+   console.log(counter);
+   
+})
 // dopo 30 secondi il timer smette di contare
 // i numeri scompaiono
 // appaiono all'utente 5 prompt in cui inserire i numeri precedente mostrati in ordine casuale
