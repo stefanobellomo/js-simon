@@ -38,9 +38,6 @@ const num5El = document.getElementById('numero5')
 const timerEl = document.getElementById('timer')
 let counter = 30
 
-// console.log(timerEl);
-// console.log(counter);
-
 // inserisci il counter nel timerEl
 num1El.innerHTML = numero1;
 num2El.innerHTML = numero2;
@@ -53,21 +50,12 @@ timerEl.innerHTML = counter;
 const timeout = setInterval(() => {
    console.log(counter);
    
-   // let numero1 = Math.ceil(Math.random() * 99);
-   // let numero2 = Math.ceil(Math.random() * 99);
-   // let numero3 = Math.ceil(Math.random() * 99);
-   // let numero4 = Math.ceil(Math.random() * 99);
-   // let numero5 = Math.ceil(Math.random() * 99);
-   
    if (counter === 0) {
       clearInterval(timeout);
-      // timerEl.innerHTML = counter
-      num1El.innerHTML = numero1;
+      timerEl.innerHTML = counter
+   } else{
+      timerEl.innerHTML = counter
    }
-      // num2El.innerHTML = `${numero2}`
-      // num3El.innerHTML = `${numero3}`
-      // num4El.innerHTML = `${numero4}`
-      // num5El.innerHTML = `${numero5}`
 
    counter--;
 
