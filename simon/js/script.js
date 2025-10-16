@@ -83,6 +83,9 @@ buttonEl.addEventListener('click', (event) => {
       Number(document.getElementById('userNum4').value),
       Number(document.getElementById('userNum5').value)
    ]
+   for (let index = 0; index < array.length; index++) {
+      const element = array[index];
+   }
    // creo un terzo array in cui pusho i numeri indovinati
    const correct_numb = []
 
