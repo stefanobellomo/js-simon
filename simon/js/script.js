@@ -67,7 +67,7 @@ const timeout = setInterval(() => {
 
    counter--;
 
-}, 100)
+}, 1000)
 
 const formEl = document.querySelector('form')
 const buttonEl = document.querySelector('.bottone')
@@ -83,9 +83,7 @@ buttonEl.addEventListener('click', (event) => {
       Number(document.getElementById('userNum4').value),
       Number(document.getElementById('userNum5').value)
    ]
-   for (let index = 0; index < array.length; index++) {
-      const element = array[index];
-   }
+
    // creo un terzo array in cui pusho i numeri indovinati
    const correct_numb = []
 
@@ -99,7 +97,7 @@ buttonEl.addEventListener('click', (event) => {
 
       // appare un messaggio che indica quanti e quali numeri l'utente ha indovinato
       if (correct_numb.length > 0) {
-         messageEl.innerHTML = `hai indovinato ${correct_numb.length} numero/i: ${correct_numb}`
+         messageEl.innerHTML = `hai indovinato ${correct_numb.length} numero/i: ${correct_numb} bravo Jedi`
       } else {
          messageEl.innerHTML = `non hai indovinato nessun numero`
       }
