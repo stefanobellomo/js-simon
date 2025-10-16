@@ -92,7 +92,10 @@ buttonEl.addEventListener('click', (event) => {
       if (user_numb.includes(numb[i])) {
          // se è incluso lo pusho nel terzo array
          correct_numb.push(numb[i])
-         // appare un messaggio che indica quanti e quali numeri l'utente ha indovinato
+      }
+
+      // appare un messaggio che indica quanti e quali numeri l'utente ha indovinato
+      if (correct_numb.length > 0) {
          messageEl.innerHTML = `hai indovinato ${correct_numb.length} numero/i: ${correct_numb}`
       } else {
          messageEl.innerHTML = `non hai indovinato nessun numero`
