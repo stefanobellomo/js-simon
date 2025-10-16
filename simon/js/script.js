@@ -59,13 +59,13 @@ const timeout = setInterval(() => {
       num4El.classList.add('d-none')
       num5El.classList.add('d-none')
 
-      //qui far apparire i 5 prompt
-      let userNum1 = Number(prompt('inserisci il primo numero'))
-      let userNum2 = Number(prompt('inserisci il secondo numero'))
-      let userNum3 = Number(prompt('inserisci il terzo numero'))
-      let userNum4 = Number(prompt('inserisci il quarto numero'))
-      let userNum5 = Number(prompt('inserisci il quinto numero'))
-      console.log(userNum1, userNum2, userNum3, userNum4, userNum5);
+      // //qui far apparire i 5 prompt
+      // let userNum1 = Number(prompt('inserisci il primo numero'))
+      // let userNum2 = Number(prompt('inserisci il secondo numero'))
+      // let userNum3 = Number(prompt('inserisci il terzo numero'))
+      // let userNum4 = Number(prompt('inserisci il quarto numero'))
+      // let userNum5 = Number(prompt('inserisci il quinto numero'))
+      // console.log(userNum1, userNum2, userNum3, userNum4, userNum5);
 
       // creo due array uno con i numeri generati e uno con i numeri inseriti dall'utente
       const numb = [numero1, numero2, numero3, numero4, numero5]
@@ -98,4 +98,10 @@ const timeout = setInterval(() => {
 // appaiono all'utente 5 prompt in cui inserire i numeri precedente mostrati in ordine casuale
 // appare un messaggio che indica quanti e quali numeri l'utente ha indovinato
 
+const formEl = document.querySelector('form')
+const buttonEl = document.querySelector('.bottone')
+
+formEl.addEventListener('click', (event) => {
+   event.preventDefault()
+})
 

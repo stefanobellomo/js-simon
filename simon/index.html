@@ -20,7 +20,7 @@
 
         <div id="timer">
         </div>
-        
+
         <ul>
             <li class="num1El" id="numero1"></li>
             <li class="num2El" id="numero2"></li>
@@ -29,16 +29,39 @@
             <li class="num5El" id="numero5"></li>
         </ul>
 
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"></script>
+        <form>
+            <div class="d-flex gap-5" id="input-group">
+                <input id="userNum1" type="number" class="num1El" min="1"
+                    max="99"
+                    required>
+                <input id="userNum2" type="number" class="num2El" min="1"
+                    max="99"
+                    required>
+                <input id="userNum3" type="number" class="num3El" min="1"
+                    max="99"
+                    required>
+                <input id="userNum4" type="number" class="num4El" min="1"
+                    max="99"
+                    required>
+                <input id="userNum5" type="number" class="num5El" min="1"
+                    max="99"
+                    required>
+            </div>
+                <button
+                    class="bottone btn btn-primary mt-2 d-block mx-auto">Conferma</button>
+                <p class="text-danger text-center" id="message"></p>
+            </form>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"></script>
-        <script src="./js/script.js"></script>
-    </body>
-</html>
+            <!-- Bootstrap JavaScript Libraries -->
+            <script
+                src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"></script>
+
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+                integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+                crossorigin="anonymous"></script>
+            <script src="./js/script.js"></script>
+        </body>
+    </html>
