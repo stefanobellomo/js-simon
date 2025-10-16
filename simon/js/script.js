@@ -53,7 +53,40 @@ const timeout = setInterval(() => {
    if (counter === 0) {
       clearInterval(timeout);
       timerEl.innerHTML = counter
-   } else{
+      num1El.classList.add('d-none')
+      num2El.classList.add('d-none')
+      num3El.classList.add('d-none')
+      num4El.classList.add('d-none')
+      num5El.classList.add('d-none')
+
+      //qui far apparire i 5 prompt
+      let userNum1 = Number(prompt('inserisci il primo numero'))
+      let userNum2 = Number(prompt('inserisci il secondo numero'))
+      let userNum3 = Number(prompt('inserisci il terzo numero'))
+      let userNum4 = Number(prompt('inserisci il quarto numero'))
+      let userNum5 = Number(prompt('inserisci il quinto numero'))
+      console.log(userNum1, userNum2, userNum3, userNum4, userNum5);
+
+      // creo due array uno con i numeri generati e uno con i numeri inseriti dall'utente
+      const numb = [numero1, numero2, numero3, numero4, numero5]
+      const user_numb = [userNum1, userNum2, userNum3, userNum4, userNum5]
+      // creo un terzo array in cui pusho i numeri indovinati
+      const correct_numb = []
+      
+      // ciclo il primo array e controllo se ogni numero è incluso nel secondo array
+      for (let i = 0; i < numb.length; i++) {
+         // qui controllo quali numeri sono stati indovinati
+         if (user_numb.includes(numb[i])) { 
+            // se è incluso lo pusho nel terzo array
+            correct_numb.push(numb[i])
+            // alla fine stampo il terzo array e la sua lunghezza
+            console.log('hai indovinato ' + correct_numb);
+         } else {
+            console.log('non hai indovinato ' + numb[i]);
+         }
+      }
+
+   } else {
       timerEl.innerHTML = counter
    }
 
