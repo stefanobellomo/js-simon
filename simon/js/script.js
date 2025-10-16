@@ -19,28 +19,59 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 */
 
 // inserire 5 numeri generati casualmente
-let numero1 = Math.ceil(Math.random(1) * 99);
-let numero2 = Math.ceil(Math.random(1) * 99);
-let numero3 = Math.ceil(Math.random(1) * 99);
-let numero4 = Math.ceil(Math.random(1) * 99);
-let numero5 = Math.ceil(Math.random(1) * 99);
+let numero1 = Math.ceil(Math.random() * 99);
+let numero2 = Math.ceil(Math.random() * 99);
+let numero3 = Math.ceil(Math.random() * 99);
+let numero4 = Math.ceil(Math.random() * 99);
+let numero5 = Math.ceil(Math.random() * 99);
 
 console.log(numero1, numero2, numero3, numero4, numero5);
 
+// dichiaro i numel nella dom
+const num1El = document.getElementById('numero1')
+const num2El = document.getElementById('numero2')
+const num3El = document.getElementById('numero3')
+const num4El = document.getElementById('numero4')
+const num5El = document.getElementById('numero5')
 
 // creo una variabile timerEl e un contatore 
 const timerEl = document.getElementById('timer')
 let counter = 30
 
-console.log(timerEl);
-console.log(counter);
+// console.log(timerEl);
+// console.log(counter);
 
+// inserisci il counter nel timerEl
+num1El.innerHTML = numero1;
+num2El.innerHTML = numero2;
+num3El.innerHTML = numero3;
+num4El.innerHTML = numero4;
+num5El.innerHTML = numero5;
+timerEl.innerHTML = counter;
 
 // imposto un timer di 30 secondi
 const timeout = setInterval(() => {
    console.log(counter);
    
-})
+   // let numero1 = Math.ceil(Math.random() * 99);
+   // let numero2 = Math.ceil(Math.random() * 99);
+   // let numero3 = Math.ceil(Math.random() * 99);
+   // let numero4 = Math.ceil(Math.random() * 99);
+   // let numero5 = Math.ceil(Math.random() * 99);
+   
+   if (counter === 0) {
+      clearInterval(timeout);
+      // timerEl.innerHTML = counter
+      num1El.innerHTML = numero1;
+   }
+      // num2El.innerHTML = `${numero2}`
+      // num3El.innerHTML = `${numero3}`
+      // num4El.innerHTML = `${numero4}`
+      // num5El.innerHTML = `${numero5}`
+
+   counter--;
+
+}, 100)
 // dopo 30 secondi il timer smette di contare
 // i numeri scompaiono
 // appaiono all'utente 5 prompt in cui inserire i numeri precedente mostrati in ordine casuale
