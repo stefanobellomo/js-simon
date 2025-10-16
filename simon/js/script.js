@@ -34,7 +34,8 @@ const num3El = document.getElementById('numero3')
 const num4El = document.getElementById('numero4')
 const num5El = document.getElementById('numero5')
 
-// creo una variabile timerEl e un contatore 
+// creo una variabile timerEl e un contatore e message
+const messageEl = document.getElementById('message')
 const timerEl = document.getElementById('timer')
 let counter = 30
 
@@ -49,43 +50,17 @@ timerEl.innerHTML = counter;
 // imposto un timer di 30 secondi
 const timeout = setInterval(() => {
    console.log(counter);
-   
+
    if (counter === 0) {
+      // dopo 30 secondi il timer smette di contare
       clearInterval(timeout);
       timerEl.innerHTML = counter
+      // i numeri scompaiono
       num1El.classList.add('d-none')
       num2El.classList.add('d-none')
       num3El.classList.add('d-none')
       num4El.classList.add('d-none')
       num5El.classList.add('d-none')
-
-      // //qui far apparire i 5 prompt
-      // let userNum1 = Number(prompt('inserisci il primo numero'))
-      // let userNum2 = Number(prompt('inserisci il secondo numero'))
-      // let userNum3 = Number(prompt('inserisci il terzo numero'))
-      // let userNum4 = Number(prompt('inserisci il quarto numero'))
-      // let userNum5 = Number(prompt('inserisci il quinto numero'))
-      // console.log(userNum1, userNum2, userNum3, userNum4, userNum5);
-
-      // creo due array uno con i numeri generati e uno con i numeri inseriti dall'utente
-      const numb = [numero1, numero2, numero3, numero4, numero5]
-      const user_numb = [userNum1, userNum2, userNum3, userNum4, userNum5]
-      // creo un terzo array in cui pusho i numeri indovinati
-      const correct_numb = []
-      
-      // ciclo il primo array e controllo se ogni numero è incluso nel secondo array
-      for (let i = 0; i < numb.length; i++) {
-         // qui controllo quali numeri sono stati indovinati
-         if (user_numb.includes(numb[i])) { 
-            // se è incluso lo pusho nel terzo array
-            correct_numb.push(numb[i])
-            // alla fine stampo il terzo array e la sua lunghezza
-            console.log('hai indovinato ' + correct_numb);
-         } else {
-            console.log('non hai indovinato ' + numb[i]);
-         }
-      }
-
    } else {
       timerEl.innerHTML = counter
    }
@@ -93,15 +68,35 @@ const timeout = setInterval(() => {
    counter--;
 
 }, 100)
-// dopo 30 secondi il timer smette di contare
-// i numeri scompaiono
-// appaiono all'utente 5 prompt in cui inserire i numeri precedente mostrati in ordine casuale
-// appare un messaggio che indica quanti e quali numeri l'utente ha indovinato
 
 const formEl = document.querySelector('form')
 const buttonEl = document.querySelector('.bottone')
 
-formEl.addEventListener('click', (event) => {
+buttonEl.addEventListener('click', (event) => {
    event.preventDefault()
+
+   const numb = [numero1, numero2, numero3, numero4, numero5]
+   const user_numb = [
+      Number(document.getElementById('userNum1').value),
+      Number(document.getElementById('userNum2').value),
+      Number(document.getElementById('userNum3').value),
+      Number(document.getElementById('userNum4').value),
+      Number(document.getElementById('userNum5').value)
+   ]
+   // creo un terzo array in cui pusho i numeri indovinati
+   const correct_numb = []
+
+   // ciclo il primo array e controllo se ogni numero è incluso nel secondo array
+   for (let i = 0; i < numb.length; i++) {
+      // qui controllo quali numeri sono stati indovinati
+      if (user_numb.includes(numb[i])) {
+         // se è incluso lo pusho nel terzo array
+         correct_numb.push(numb[i])
+         // appare un messaggio che indica quanti e quali numeri l'utente ha indovinato
+         messageEl.innerHTML = `hai indovinato ${correct_numb}`
+      } else {
+         messageEl.innerHTML = `non hai indovinato ${numb[i]}`
+      }
+   }
 })
 
